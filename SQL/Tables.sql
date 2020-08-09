@@ -1,0 +1,73 @@
+-- USE flaskapp
+--
+-- CREATE TABLE comments
+-- (
+--   ID INT PRIMARY KEY AUTO_INCREMENT,
+--   comment_text VARCHAR(400) NOT NULL,
+--   created_on DATETIME DEFAULT now(),
+--   user_id INT NOT NULL,
+--   device_id INT NOT NUll,
+--   FOREIGN KEY (user_id) REFERENCES users(ID),
+--   FOREIGN KEY (device_id) REFERENCES devices(ID)
+-- )
+-- CREATE TABLE devices
+-- (
+--   ID INT PRIMARY KEY AUTO_INCREMENT,
+--   device_name VARCHAR(500) NOT NULL,
+--   query varchar(100) NOT NULL
+-- )
+-- CREATE TABLE info
+-- (
+--   ID INT PRIMARY KEY AUTO_INCREMENT,
+--   DeviceName VARCHAR(60) NOT NULL,
+--   technology VARCHAR(100) NOT NULL,
+--   gprs VARCHAR(60) ,
+--   EDGE VARCHAR(60),
+--   announced VARCHAR(500) DEFAULT 'N/A',
+--   dimension VARCHAR(500) DEFAULT 'N/A',
+--   weight VARCHAR(500) ,
+--   sim VARCHAR(500) DEFAULT 'N/A' ,
+--   display VARCHAR(500) DEFAULT 'N/A' ,
+--   size VARCHAR(500) DEFAULT 'N/A' ,
+--   resolution VARCHAR(500) DEFAULT 'N/A' ,
+--   card_solt VARCHAR(500) DEFAULT 'N/A' ,
+--   wlan VARCHAR(500) DEFAULT 'N/A' ,
+--   bluetooth VARCHAR(500) DEFAULT 'N/A' ,
+--   gps VARCHAR(60) ,
+--   radio VARCHAR(60) ,
+--   usb VARCHAR(60) ,
+--   features_c VARCHAR(500) DEFAULT 'N/A' ,
+--   battery VARCHAR(60) ,
+--   stand_by VARCHAR(60) ,
+--   talk_time VARCHAR(60) ,
+--   colors VARCHAR(100) DEFAULT 'N/A' ,
+--   sar_us VARCHAR(100) ,
+--   sar_eu VARCHAR(100) ,
+--   sensors VARCHAR(200) DEFAULT 'N/A' ,
+--   cpu VARCHAR(500) DEFAULT 'N/A' ,
+--   rom_ram VARCHAR(300) DEFAULT 'N/A' ,
+--   os VARCHAR(300) ,
+--   payment VARCHAR(500) DEFAULT 'N/A' ,
+--   primary_camera VARCHAR(500) DEFAULT 'N/A' ,
+--   video VARCHAR(500) DEFAULT 'N/A' ,
+--   secondary_camera VARCHAR(500) DEFAULT 'N/A' ,
+--   speed VARCHAR(500) ,
+--   network TEXT,
+--   chipset TEXT,
+--   camera_features TEXT,
+--   gpu VARCHAR(60) DEFAULT 'N/A' ,
+--   nfc VARCHAR(60) ,
+--   benchmark  TEXT ,
+--   3_5_jack VARCHAR(60)
+-- )
+--
+--
+-- CREATE TABLE users
+-- (
+--   ID INT PRIMARY KEY AUTO_INCREMENT,
+--   user_name VARCHAR(255) NOT NULL,
+--   user_image varchar(255) DEFAULT 'N/A',
+--   email VARCHAR(255) UNIQUE NOT NULL,
+--   password VARCHAR(255) NOT NULL,
+--   created_on DATETIME DEFAULT now()
+-- )

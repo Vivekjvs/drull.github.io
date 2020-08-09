@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+  {% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-5">
+        <div class="boxed">
+          <form  action="/login" method="POST">
+            {{form.hidden_tag()}}
+            <div class="form-group">
+              {{form.email.label(class='text-white')}}
+              {{form.email(class='form-control')}}
+              {% for i in form.email.errors: %}
+                <p class='text-warning lead small pew'>{{i}}</p>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              {{form.password.label(class='text-white')}}
+              {{form.password(class='form-control')}}
+              {% for i in form.password.errors: %}
+                <p class='text-warning lead small'>{{i}}</p>
+              {% endfor %}
+            </div>
+            {{form.submit(class='btn btn-primary')}}
+            <div class='float-right mt-3'>
+              <p class='text-white pr-2' style='font-size:18px;'> New User <a href="/signup" class='text-success'>SignUp</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

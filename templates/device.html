@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+  {% block content %}
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="/static/profile_pic/7_DSC_0005.jpg" class="img-top" >
+        <div class="details-box">
+          <table class="table">
+            <tbody>
+              {% for i in data[0] %}
+                <tr>
+                  <th scope="row" class='text-white'>{{i}}</th>
+                  <td class="text-white">{{data[0][i]}}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <hr class='line'>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Add Comment" id='comment' data-device_id={{id}}>
+        <div class="input-group-append">
+            <button class="btn btn-warning" type="button" id="add-comment"><i class="far fa-comment"></i></button>
+        </div>
+      </div>
+      <div style='margin-bottom:100px;'>
+        {% for i in comments: %}
+          <div class="comment-box">
+              <div class="row">
+                <div class="col-8 mt-2">
+                  <img src="/static/profile_pic/{{i[5]}}" class="user-img">
+                  <span class="ml-1 mt-1">{{i[4]}}</span>
+                  <p class='comment-text mb-0 mt-1'>{{i[2]}}</p>
+                </div>
+                <div class="col-4">
+                  <span class='small mt-0'>{{i[3]}}</span>
+                  {% if session.get('user_id') and session['user_id'] == i[1] %}
+                    <div class='ml-5 mt-2'>
+                      <button type="button" data-comment_id='{{i[0]}}'  class='ml-5 btn btn-sm btn-outline-danger delete'><i class="fas fa-trash"></i></button>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
